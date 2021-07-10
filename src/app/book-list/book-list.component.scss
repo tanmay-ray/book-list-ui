@@ -1,0 +1,31 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .book-container {
+        flex: 50%;
+        max-width: 49em;
+        & > * {
+            padding: 1rem 0rem;
+        }
+    }
+}
+
+.main-container {
+    padding: 1rem 2rem;
+}
+
+.search-box {
+    display: flex;
+    & > * {
+        flex: 1 1 auto;
+        max-width: 50%;
+    }
+}

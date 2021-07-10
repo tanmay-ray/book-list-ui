@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false"
+    [class.menu-close]="!(isHandset$ | async) && !isMenuOpen" [class.menu-open]="!(isHandset$ | async) && isMenuOpen">
+    <mat-toolbar class="sidenav-font">
+        <mat-icon class="icon-nav" aria-label="Side nav toggle icon" (click)="onMenuToggle()">subject</mat-icon>
+        <span>MENU</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item class="sidenav-font" href="#">
+        <mat-icon class="icon-nav">app_registration</mat-icon>
+        <span>CONTENT MANAGEMENT</span>
+        <mat-icon>expand_more</mat-icon>
+      </a>
+      <a mat-list-item class="sidenav-font" href="#">
+        <mat-icon class="icon-nav">app_registration</mat-icon>
+        <span>COURSES</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content [style.margin-left.px]="contentMargin">
+    <mat-toolbar class="content-toolbar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="logo">atom</span>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

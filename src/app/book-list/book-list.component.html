@@ -1,0 +1,26 @@
+<main class="main-container">
+    <header>
+        <section class="title">
+            <h1 class="heading">Books</h1>
+            <button mat-raised-button color="primary">Create New Book</button>
+        </section>
+    </header>
+
+    <section class="search-box">
+        <mat-form-field appearance="standard">
+            <mat-icon matPrefix>search</mat-icon>
+            <input matInput type="search" #search placeholder="Search" />
+        </mat-form-field>
+    </section>
+
+    <section>
+        <h2 class="sub-heading">All Books</h2>
+        <section class="book-list-container">
+            <article *ngFor="let book of bookList$ | async | searchBook: search.value" class="book-container">
+                <div>
+                    <app-book [book]="book"></app-book>
+                </div>
+            </article>
+        </section>
+    </section>
+</main>
