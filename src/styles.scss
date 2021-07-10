@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: whitesmoke;
+}
+
+$accent-color: rgb(52, 78, 102);
+
+.color-accent { color: $accent-color; }
+
+.heading {
+    font-weight: 700 !important;
+    font-size: 32px !important;
+}
+
+.sub-heading {
+    font-weight: 500 !important;
+    font-size: 24px !important;
+    color: $accent-color;
+}
