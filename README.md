@@ -6,3 +6,5 @@ Displays a list of books.
 - Open the project in cmd and run command "npm i" to install dependencies.
 - Run command "npm run start".
 - Open the url: http://localhost:4200 in your browser to run the application. 
+
+### Alternatively, I have deployed the application at https://bookslist-20bac.web.app/
